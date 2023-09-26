@@ -20,6 +20,8 @@ function plotAll(pegMap) {
   });
 }
 
+
+
 function positionDisk(domdiv, diskNumber, indexOnPeg, pegindex) {
   // set its position
   let pegCenter = 300 * pegindex + 100;
@@ -77,13 +79,28 @@ function initializeDisks(pegMap) {
   });
 }
 
+
+// const moveDisks = function (n, from, to, spare) {
+//   if (n == 1) {
+//     console.log("Move disk:" + n + " from:" + from + " to:" + to);
+//   } else {
+
+//     moveDisks(n - 1, from, spare , to);
+//     console.log("Move disk:" + n + " from:" + from + " to:" + to);
+//     moveDisks(n - 1, spare, to, from); 
+//   }
+//   };
+//      const nDisks = 2;
+
+//      moveDisks(nDisks, "A", "C", "B");
+
+     
 function makeMove() {
   if (counter == 0) {
     let nDisks = 5;
     if (document.getElementById('numDisk').value) {
       nDisks = document.getElementById('numDisk').value;
     }
-
     initialize(nDisks, pegMap);
     moveDisks(nDisks, 'A', 'C', 'B');
     initializeDisks(pegHist[0]);
